@@ -25,6 +25,8 @@
 		3358E1E225764A4C00A243E5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1E125764A4C00A243E5 /* String.swift */; };
 		3358E1E625764DF900A243E5 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1E525764DF900A243E5 /* Error.swift */; };
 		3358E1E9257650E100A243E5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1E8257650E100A243E5 /* BaseViewController.swift */; };
+		3358E1EF25765FF900A243E5 /* FormCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1ED25765FF900A243E5 /* FormCollectionViewCell.swift */; };
+		3358E1F025765FF900A243E5 /* FormCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3358E1EE25765FF900A243E5 /* FormCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		3358E1E125764A4C00A243E5 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3358E1E525764DF900A243E5 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		3358E1E8257650E100A243E5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3358E1ED25765FF900A243E5 /* FormCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCollectionViewCell.swift; sourceTree = "<group>"; };
+		3358E1EE25765FF900A243E5 /* FormCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		3358E19D25760E9A00A243E5 /* PayMyBill */ = {
 			isa = PBXGroup;
 			children = (
+				3358E1EB25765FC800A243E5 /* Custom Views */,
 				3358E1C82576385E00A243E5 /* Models */,
 				3358E1C32576335900A243E5 /* Utilities */,
 				3358E1B925762C9000A243E5 /* ViewControllers */,
@@ -133,6 +138,23 @@
 				3358E1D22576392D00A243E5 /* FieldType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3358E1EB25765FC800A243E5 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				3358E1EC25765FD500A243E5 /* FormCollectionViewCell */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		3358E1EC25765FD500A243E5 /* FormCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3358E1ED25765FF900A243E5 /* FormCollectionViewCell.swift */,
+				3358E1EE25765FF900A243E5 /* FormCollectionViewCell.xib */,
+			);
+			path = FormCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +216,7 @@
 			files = (
 				3358E1AB25760E9D00A243E5 /* LaunchScreen.storyboard in Resources */,
 				3358E1A825760E9D00A243E5 /* Assets.xcassets in Resources */,
+				3358E1F025765FF900A243E5 /* FormCollectionViewCell.xib in Resources */,
 				3358E1A625760E9A00A243E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +230,7 @@
 			files = (
 				3358E1C52576336200A243E5 /* NetworkManager.swift in Sources */,
 				3358E1A325760E9A00A243E5 /* OptionSelectionViewController.swift in Sources */,
+				3358E1EF25765FF900A243E5 /* FormCollectionViewCell.swift in Sources */,
 				3358E19F25760E9A00A243E5 /* AppDelegate.swift in Sources */,
 				3358E1E225764A4C00A243E5 /* String.swift in Sources */,
 				3358E1B625762AB200A243E5 /* UIViewController.swift in Sources */,
