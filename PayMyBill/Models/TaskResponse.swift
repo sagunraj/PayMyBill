@@ -11,7 +11,7 @@ struct TaskResponse: Codable {
 
   let status: String
   let message: String
-  let result: [ResultField]
+  let result: ResultField
 
   public enum CodingKeys: String, CodingKey {
     case status, message, result

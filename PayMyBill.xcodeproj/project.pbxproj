@@ -22,6 +22,8 @@
 		3358E1D32576392D00A243E5 /* FieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1D22576392D00A243E5 /* FieldType.swift */; };
 		3358E1DA257639C100A243E5 /* UIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1D9257639C100A243E5 /* UIType.swift */; };
 		3358E1DD257639E400A243E5 /* FieldValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1DC257639E400A243E5 /* FieldValue.swift */; };
+		3358E1E225764A4C00A243E5 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1E125764A4C00A243E5 /* String.swift */; };
+		3358E1E625764DF900A243E5 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1E525764DF900A243E5 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		3358E1D22576392D00A243E5 /* FieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldType.swift; sourceTree = "<group>"; };
 		3358E1D9257639C100A243E5 /* UIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIType.swift; sourceTree = "<group>"; };
 		3358E1DC257639E400A243E5 /* FieldValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValue.swift; sourceTree = "<group>"; };
+		3358E1E125764A4C00A243E5 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		3358E1E525764DF900A243E5 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				3358E1B525762AB200A243E5 /* UIViewController.swift */,
+				3358E1E125764A4C00A243E5 /* String.swift */,
+				3358E1E525764DF900A243E5 /* Error.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 				3358E1C52576336200A243E5 /* NetworkManager.swift in Sources */,
 				3358E1A325760E9A00A243E5 /* OptionSelectionViewController.swift in Sources */,
 				3358E19F25760E9A00A243E5 /* AppDelegate.swift in Sources */,
+				3358E1E225764A4C00A243E5 /* String.swift in Sources */,
 				3358E1B625762AB200A243E5 /* UIViewController.swift in Sources */,
 				3358E1CA2576387100A243E5 /* TaskResponse.swift in Sources */,
 				3358E1DA257639C100A243E5 /* UIType.swift in Sources */,
@@ -207,6 +214,7 @@
 				3358E1DD257639E400A243E5 /* FieldValue.swift in Sources */,
 				3358E1BC25762CC400A243E5 /* FormViewController.swift in Sources */,
 				3358E1A125760E9A00A243E5 /* SceneDelegate.swift in Sources */,
+				3358E1E625764DF900A243E5 /* Error.swift in Sources */,
 				3358E1CD257638DB00A243E5 /* ResultField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

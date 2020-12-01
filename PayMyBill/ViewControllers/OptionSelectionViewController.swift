@@ -40,8 +40,22 @@ final class OptionSelectionViewController: UIViewController {
 extension OptionSelectionViewController {
 
   @IBAction func onGoButtonTap(_ sender: UIButton) {
-    let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FormViewController")
-    navigationController?.pushViewController(destinationVC, animated: true)
+    NetworkManager.shared.getTaskForm(with: selectedIndex) { [weak self] (taskResponse, responseErrorMessage, error) in
+      guard let self = self else { return }
+      if responseErrorMessage.hasValue {
+        self.showAlertWithOk(with: "Oopsies!", and: responseErrorMessage!)
+      }
+      if error.hasValue {
+        self.showAlertWithOk(with: "Oopsies!", and: error!.localizedDescription)
+      }
+
+      DispatchQueue.main.async {
+        guard let destinationVC = UIStoryboard(name: "Main",
+                                               bundle: nil).instantiateViewController(withIdentifier: "FormViewController") as? FormViewController else { return }
+        destinationVC.taskResponse = taskResponse
+        self.navigationController?.pushViewController(destinationVC, animated: true)
+      }
+    }
   }
 
 }
@@ -63,7 +77,7 @@ extension OptionSelectionViewController: UIPickerViewDelegate, UIPickerViewDataS
 
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     chooseOptionTextField.text = optionsArray[row]
-    selectedIndex = row
+    selectedIndex = row + 1
     goButton.isEnabled = true
   }
 
