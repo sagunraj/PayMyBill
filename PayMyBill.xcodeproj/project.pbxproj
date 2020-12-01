@@ -15,6 +15,13 @@
 		3358E1AB25760E9D00A243E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3358E1A925760E9D00A243E5 /* LaunchScreen.storyboard */; };
 		3358E1B625762AB200A243E5 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1B525762AB200A243E5 /* UIViewController.swift */; };
 		3358E1BC25762CC400A243E5 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1BB25762CC400A243E5 /* FormViewController.swift */; };
+		3358E1C52576336200A243E5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1C42576336200A243E5 /* NetworkManager.swift */; };
+		3358E1CA2576387100A243E5 /* TaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1C92576387100A243E5 /* TaskResponse.swift */; };
+		3358E1CD257638DB00A243E5 /* ResultField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1CC257638DB00A243E5 /* ResultField.swift */; };
+		3358E1D02576390D00A243E5 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1CF2576390D00A243E5 /* Field.swift */; };
+		3358E1D32576392D00A243E5 /* FieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1D22576392D00A243E5 /* FieldType.swift */; };
+		3358E1DA257639C100A243E5 /* UIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1D9257639C100A243E5 /* UIType.swift */; };
+		3358E1DD257639E400A243E5 /* FieldValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358E1DC257639E400A243E5 /* FieldValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		3358E1AC25760E9D00A243E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3358E1B525762AB200A243E5 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		3358E1BB25762CC400A243E5 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		3358E1C42576336200A243E5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3358E1C92576387100A243E5 /* TaskResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskResponse.swift; sourceTree = "<group>"; };
+		3358E1CC257638DB00A243E5 /* ResultField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultField.swift; sourceTree = "<group>"; };
+		3358E1CF2576390D00A243E5 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		3358E1D22576392D00A243E5 /* FieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldType.swift; sourceTree = "<group>"; };
+		3358E1D9257639C100A243E5 /* UIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIType.swift; sourceTree = "<group>"; };
+		3358E1DC257639E400A243E5 /* FieldValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,8 @@
 		3358E19D25760E9A00A243E5 /* PayMyBill */ = {
 			isa = PBXGroup;
 			children = (
+				3358E1C82576385E00A243E5 /* Models */,
+				3358E1C32576335900A243E5 /* Utilities */,
 				3358E1B925762C9000A243E5 /* ViewControllers */,
 				3358E1B425762AA300A243E5 /* Extensions */,
 				3358E19E25760E9A00A243E5 /* AppDelegate.swift */,
@@ -87,6 +103,27 @@
 				3358E1BB25762CC400A243E5 /* FormViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3358E1C32576335900A243E5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3358E1C42576336200A243E5 /* NetworkManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3358E1C82576385E00A243E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3358E1C92576387100A243E5 /* TaskResponse.swift */,
+				3358E1CC257638DB00A243E5 /* ResultField.swift */,
+				3358E1CF2576390D00A243E5 /* Field.swift */,
+				3358E1D9257639C100A243E5 /* UIType.swift */,
+				3358E1DC257639E400A243E5 /* FieldValue.swift */,
+				3358E1D22576392D00A243E5 /* FieldType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,11 +196,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3358E1C52576336200A243E5 /* NetworkManager.swift in Sources */,
 				3358E1A325760E9A00A243E5 /* OptionSelectionViewController.swift in Sources */,
 				3358E19F25760E9A00A243E5 /* AppDelegate.swift in Sources */,
 				3358E1B625762AB200A243E5 /* UIViewController.swift in Sources */,
+				3358E1CA2576387100A243E5 /* TaskResponse.swift in Sources */,
+				3358E1DA257639C100A243E5 /* UIType.swift in Sources */,
+				3358E1D02576390D00A243E5 /* Field.swift in Sources */,
+				3358E1D32576392D00A243E5 /* FieldType.swift in Sources */,
+				3358E1DD257639E400A243E5 /* FieldValue.swift in Sources */,
 				3358E1BC25762CC400A243E5 /* FormViewController.swift in Sources */,
 				3358E1A125760E9A00A243E5 /* SceneDelegate.swift in Sources */,
+				3358E1CD257638DB00A243E5 /* ResultField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
