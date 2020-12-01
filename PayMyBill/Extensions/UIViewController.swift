@@ -21,6 +21,7 @@ extension UIViewController {
 
 }
 
+// MARK: - For Recognizing Tap on The Main View
 extension UIViewController {
 
     func hideKeyboardWhenTappedOnMainView() {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class OptionSelectionViewController: UIViewController {
+final class OptionSelectionViewController: BaseViewController {
 
   @IBOutlet weak private var goButton: UIButton!
   @IBOutlet weak private var chooseOptionTextField: UITextField!
@@ -40,11 +40,14 @@ final class OptionSelectionViewController: UIViewController {
 extension OptionSelectionViewController {
 
   @IBAction func onGoButtonTap(_ sender: UIButton) {
+    showActivityIndicator()
     NetworkManager.shared.getTaskForm(with: selectedIndex) { [weak self] (taskResponse, responseErrorMessage, error) in
       guard let self = self else { return }
+      self.hideActivityIndicator()
       if responseErrorMessage.hasValue {
         self.showAlertWithOk(with: "Oopsies!", and: responseErrorMessage!)
       }
+
       if error.hasValue {
         self.showAlertWithOk(with: "Oopsies!", and: error!.localizedDescription)
       }
