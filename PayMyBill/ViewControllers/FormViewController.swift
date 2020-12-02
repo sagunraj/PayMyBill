@@ -13,6 +13,8 @@ final class FormViewController: UIViewController {
   
   private var submissionData: [SubmissionData] = []
 
+  private let validator = Validator()
+
   @IBOutlet weak private var proceedButton: UIButton!
   @IBOutlet weak private var formCollectionView: UICollectionView!
 
@@ -41,7 +43,24 @@ final class FormViewController: UIViewController {
 extension FormViewController {
 
   @IBAction func onProceedButtonTap(_ sender: UIButton) {
-    
+    submissionData.enumerated().forEach { (index, datum) in
+      if !datum.fieldData.regex.isEmpty {
+        validator.validateTextField(with: datum.fieldData.regex,
+                                    and: datum.textValue,
+                                    fieldType: datum.fieldData.name) { (isSuccessful) in
+          if !isSuccessful {
+            showAlertWithOk(with: "Validation Error",
+                            and: "Please make sure you have entered a valid \(datum.fieldData.placeholder).")
+            return
+          }
+        }
+      }
+      if index == submissionData.count - 1 {
+        showAlertWithOk(with: "Yippie!", and: "Your data have been submitted successfully.") { _ in
+          self.navigationController?.popViewController(animated: true)
+        }
+      }
+    }
   }
 
 }
