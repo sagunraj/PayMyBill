@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum TextFieldType: String {
+  case dropdown = "dropdown"
+  case textField = "textfield"
+}
+
 protocol FormCVCellDelegate: class {
   func didUpdateTextFieldCharacters(with textString: String, and field: Field)
 }
@@ -19,12 +24,19 @@ final class FormCollectionViewCell: UICollectionViewCell {
   weak var delegate: FormCVCellDelegate?
 
   private var field: Field!
+  private var pickerView: UIPickerView!
 
   func setupCell(with field: Field, and delegate: FormCVCellDelegate) {
     self.field = field
+    self.delegate = delegate
     formLabel.text = field.placeholder
     formTextField.placeholder = field.hintText
-    self.delegate = delegate
+    if field.uiType.type == TextFieldType.dropdown.rawValue {
+      pickerView = UIPickerView()
+      pickerView.dataSource = self
+      pickerView.delegate = self
+      formTextField.inputView = pickerView
+    }
   }
 
   override func awakeFromNib() {
@@ -46,6 +58,27 @@ extension FormCollectionViewCell: UITextFieldDelegate {
     let fullText = text.replacingCharacters(in: range, with: string)
     delegate?.didUpdateTextFieldCharacters(with: fullText, and: field)
     return true
+  }
+
+}
+
+extension FormCollectionViewCell: UIPickerViewDelegate, UIPickerViewDataSource {
+
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return 1
+  }
+
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return field.uiType.values.count
+  }
+
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return field.uiType.values[row].name
+  }
+
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    formTextField.text = field.uiType.values[row].name
+    delegate?.didUpdateTextFieldCharacters(with: field.uiType.values[row].id, and: field)
   }
 
 }

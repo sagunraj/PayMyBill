@@ -18,6 +18,7 @@ final class FormViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    hideKeyboardWhenTappedOnMainView()
     setupView()
     setupCollectionView()
   }
