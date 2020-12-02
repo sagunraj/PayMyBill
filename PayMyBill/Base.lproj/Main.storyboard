@@ -100,8 +100,8 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5Z-Di-o0i">
-                                <rect key="frame" x="182.5" y="822" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
+                                <rect key="frame" x="178.5" y="822" width="57" height="30"/>
+                                <state key="normal" title="Proceed"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="piq-mG-GU3"/>
@@ -117,6 +117,7 @@
                     </view>
                     <connections>
                         <outlet property="formCollectionView" destination="PJR-9L-6cA" id="JUD-YJ-BFQ"/>
+                        <outlet property="proceedButton" destination="f5Z-Di-o0i" id="8zF-dt-kHk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FrB-jy-fuk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -7,6 +7,14 @@
 
 import Foundation
 
+extension String {
+
+  var boolValue: Bool {
+    return (self as NSString).boolValue
+  }
+
+}
+
 extension Optional where Wrapped == String {
 
   var hasValue: Bool {
