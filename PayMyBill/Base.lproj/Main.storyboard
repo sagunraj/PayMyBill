@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PJR-9L-6cA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="97" width="414" height="721"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="0rs-9z-0Jz">
                                     <size key="itemSize" width="375" height="80"/>
@@ -100,18 +100,33 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5Z-Di-o0i">
-                                <rect key="frame" x="178.5" y="822" width="57" height="30"/>
+                                <rect key="frame" x="178.5" y="814" width="57" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qT5-R4-5Ma"/>
+                                </constraints>
                                 <state key="normal" title="Proceed"/>
+                                <connections>
+                                    <action selector="onProceedButtonTap:" destination="wEy-QZ-dbh" eventType="touchUpInside" id="qTb-kR-UlO"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fields marked with '*' are required." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66r-Xj-22H">
+                                <rect key="frame" x="28" y="64" width="358" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="piq-mG-GU3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="piq-mG-GU3" firstAttribute="bottom" secondItem="PJR-9L-6cA" secondAttribute="bottom" id="L1l-zu-sQ0"/>
+                            <constraint firstItem="piq-mG-GU3" firstAttribute="bottom" secondItem="PJR-9L-6cA" secondAttribute="bottom" constant="44" id="54a-SA-77H"/>
+                            <constraint firstItem="66r-Xj-22H" firstAttribute="leading" secondItem="piq-mG-GU3" secondAttribute="leading" constant="28" id="FWV-8d-G8e"/>
                             <constraint firstItem="piq-mG-GU3" firstAttribute="trailing" secondItem="PJR-9L-6cA" secondAttribute="trailing" id="P1p-Rw-VaT"/>
                             <constraint firstItem="f5Z-Di-o0i" firstAttribute="centerX" secondItem="piq-mG-GU3" secondAttribute="centerX" id="Ssr-Ze-ewy"/>
-                            <constraint firstItem="PJR-9L-6cA" firstAttribute="top" secondItem="piq-mG-GU3" secondAttribute="top" id="Tt1-t0-exg"/>
-                            <constraint firstItem="piq-mG-GU3" firstAttribute="bottom" secondItem="f5Z-Di-o0i" secondAttribute="bottom" constant="10" id="gc6-B0-Erg"/>
+                            <constraint firstItem="piq-mG-GU3" firstAttribute="trailing" secondItem="66r-Xj-22H" secondAttribute="trailing" constant="28" id="Ufb-er-ZXM"/>
+                            <constraint firstItem="PJR-9L-6cA" firstAttribute="top" secondItem="66r-Xj-22H" secondAttribute="bottom" constant="12" id="WSy-oV-ZN4"/>
+                            <constraint firstItem="66r-Xj-22H" firstAttribute="top" secondItem="piq-mG-GU3" secondAttribute="top" constant="20" id="X0V-ma-HcY"/>
+                            <constraint firstItem="piq-mG-GU3" firstAttribute="bottom" secondItem="f5Z-Di-o0i" secondAttribute="bottom" constant="8" id="gc6-B0-Erg"/>
                             <constraint firstItem="PJR-9L-6cA" firstAttribute="leading" secondItem="piq-mG-GU3" secondAttribute="leading" id="nic-u1-sfC"/>
                         </constraints>
                     </view>

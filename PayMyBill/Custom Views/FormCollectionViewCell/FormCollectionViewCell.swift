@@ -29,7 +29,7 @@ final class FormCollectionViewCell: UICollectionViewCell {
   func setupCell(with field: Field, and delegate: FormCVCellDelegate) {
     self.field = field
     self.delegate = delegate
-    formLabel.text = field.placeholder
+    formLabel.text = "\(field.placeholder) \(field.isMandatory.boolValue ? "*" : "")"
     formTextField.placeholder = field.hintText
     if field.uiType.type == TextFieldType.dropdown.rawValue {
       pickerView = UIPickerView()
@@ -78,7 +78,8 @@ extension FormCollectionViewCell: UIPickerViewDelegate, UIPickerViewDataSource {
 
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     formTextField.text = field.uiType.values[row].name
-    delegate?.didUpdateTextFieldCharacters(with: field.uiType.values[row].id, and: field)
+    delegate?.didUpdateTextFieldCharacters(with: field.uiType.values[row].id,
+                                           and: field)
   }
 
 }

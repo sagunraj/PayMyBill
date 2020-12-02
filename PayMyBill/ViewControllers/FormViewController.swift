@@ -37,6 +37,15 @@ final class FormViewController: UIViewController {
 
 }
 
+//MARK: - Actions
+extension FormViewController {
+
+  @IBAction func onProceedButtonTap(_ sender: UIButton) {
+    
+  }
+
+}
+
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension FormViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
