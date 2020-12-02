@@ -31,11 +31,22 @@ final class FormCollectionViewCell: UICollectionViewCell {
     self.delegate = delegate
     formLabel.text = "\(field.placeholder) \(field.isMandatory.boolValue ? "*" : "")"
     formTextField.placeholder = field.hintText
+    formTextField.keyboardType = getAppropriateKeyboardType(with: field.name)
     if field.uiType.type == TextFieldType.dropdown.rawValue {
       pickerView = UIPickerView()
       pickerView.dataSource = self
       pickerView.delegate = self
       formTextField.inputView = pickerView
+    }
+  }
+
+  func getAppropriateKeyboardType(with name: String) -> UIKeyboardType {
+    if name.lowercased().contains("email") {
+      return .emailAddress
+    } else if name.lowercased().contains("phone") {
+      return .phonePad
+    } else {
+      return .default
     }
   }
 
@@ -62,6 +73,7 @@ extension FormCollectionViewCell: UITextFieldDelegate {
 
 }
 
+// MARK - UIPickerViewDelegate, UIPickerViewDataSource
 extension FormCollectionViewCell: UIPickerViewDelegate, UIPickerViewDataSource {
 
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
